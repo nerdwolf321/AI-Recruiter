@@ -1,0 +1,14 @@
+# Environments
+.env
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Results / Output
+AI_Recruiter_Results.xlsx
+AI_Recruiter_Results.csv
+
+# Resumes Cache (Optional, depending on if you want to commit candidate resumes)
+# resumes/

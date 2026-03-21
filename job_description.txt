@@ -1,0 +1,25 @@
+Role: Senior Python Developer
+
+Job Description:
+We are looking for an experienced Senior Python Developer to join our core backend team. 
+The ideal candidate should have at least 5 years of professional experience writing clean, scalable Python code.
+
+Key Requirements:
+- 5+ years of Python 3.x experience
+- Strong knowledge of web frameworks (FastAPI or Django)
+- Database experience (PostgreSQL, MongoDB)
+- Experience building and integrating REST APIs
+- Familiarity with CI/CD pipelines (GitHub Actions, Docker)
+- Unit testing experience (pytest)
+- Good communication skills and ability to work in an agile environment.
+
+Nice to Have:
+- Experience with AI frameworks (LangChain, OpenAI)
+- AWS or GCP cloud components experience
+- Background in data engineering or robust ETL pipelines
+
+Responsibilities:
+- Build and maintain highly scalable backend services
+- Integrate various 3rd party APIs
+- Optimize performance for massive datasets
+- Mentor junior engineers through code reviews

@@ -1,0 +1,479 @@
+﻿python : D:\developer\recruiter\age
+nts.py:69: 
+LangChainDeprecationWarning: The 
+class `ChatOllama` was deprecated 
+in LangChain 0.3.1 and will be 
+removed in 1.0.0. An updated 
+version of the class exists in the 
+`langchain-ollama package and 
+should be used instead. To use it 
+run `pip install -U 
+`langchain-ollama` and import as 
+`from `langchain_ollama import 
+ChatOllama``.
+At line:1 char:1
++ python main.py > test_out.txt 
+2>&1
++ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotS 
+   pecified: (D:\developer\re...t  
+   ChatOllama``.:String) [], Rem   
+ oteException
+    + FullyQualifiedErrorId : Nati 
+   veCommandError
+ 
+  return 
+ChatOllama(model=model_name, 
+base_url=base_url, 
+temperature=temperature)
+
+--- Processing Mehak Resume.pdf ---
++-------------------------[CrewAIEventsBus] Sync handler error in on_crew_started: 'charmap' codec can't 
+encode character '\U0001f680' in position 1: character maps to <undefined>
++-------------------------[CrewAIEventsBus] Sync handler error in on_task_started: 'charmap' codec can't 
+encode character '\U0001f680' in position 1: character maps to <undefined>
++-------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+can't encode character '\U0001f680' in position 1: character maps to 
+<undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+[CrewAIEventsBus+-]------------------------------ Warning: Event pairing mismatch. 'llm_call_failed' closed 
+'agent_execution_started'[CrewAIEventsBus] Sync handler error in on_llm_call_failed:  'charmap'(expected  codec 
+can't encode character 'llm_call_started''\u274c') in position 1
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+: character maps to +-<undefined>------------------------
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\U0001f680' in position 1: character maps to 
+<undefined>
++-------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+can't encode character '\U0001f680'+- in position ------------------------------1[CrewAIEventsBus: character maps to 
+]< Warning: Event pairing mismatch. 'llm_call_failed' closed 
+undefined'agent_execution_started'> 
+(expected ['llm_call_started'CrewAIEventsBus)]
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
++- Sync handler error in on_llm_call_failed: ------------------------'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\U0001f680' in position 1: character maps to 
+<undefined>
++-------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+can't encode character '\U0001f680' in position 1+-[: character maps to 
+<------------------------------CrewAIEventsBusundefined>
+] Warning: Event pairing mismatch. 'llm_call_failed'[CrewAIEventsBus] Sync handler error in on_llm_call_failed:  closed 
+'agent_execution_started''charmap' (expected  codec 
+can't encode character '\u274c''llm_call_started' in position 1: character maps to )
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[<+-undefined------------------------>CrewAIEventsBus
+][CrewAIEventsBus Warning: Event pairing mismatch. ] Sync handler error in on_llm_call_failed: 'agent_execution_error''charmap' codec 
+can't encode character  
+closed '\U0001f680' in position 'task_started'1 : character maps to 
+(<expected undefined'agent_execution_started'>)
+[
+CrewAIEventsBus] Warning: Event pairing mismatch. 'task_failed' closed 
+'crew_kickoff_started' (expected 'task_started')
++-------------------------------[CrewAIEventsBus] Sync handler error in on_task_failed: 'charmap' codec can't 
+encode character '\u274c' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Warning: Ending event 'crew_kickoff_failed' emitted with 
+empty scope stack. Missing starting event?
++-------------------------[CrewAIEventsBus] Sync handler error in on_crew_failed: 'charmap' codec can't 
+encode character '\U0001f680' in position 1: character maps to <undefined>
+-> Agent pipeline failed for Mehak Resume.pdf: Model llama3 not found: 404 page not found
+
+--- Processing Naukri_AKSHITA[4y_0m].pdf ---
++-------------------------------[CrewAIEventsBus] Sync handler error in on_crew_started: 'charmap' codec can't 
+encode character '\u274c' in position 1: character maps to <undefined>
++-------------------------[CrewAIEventsBus] Sync handler error in on_task_started: 'charmap' codec can't 
+encode character '\U0001f680' in position 1: character maps to <undefined>
++-------------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
++-[------------------------CrewAIEventsBus[]CrewAIEventsBus Warning: Event pairing mismatch. 'llm_call_failed' closed 
+]'agent_execution_started' (expected  Sync handler error in on_llm_call_failed: 'charmap''llm_call_started' codec 
+can't encode character )
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
++-'\U0001f680' in position ------------------------------1: character maps to 
+<undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
++-------------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+can't encode character '\u274c' in position 1: character maps to <undefined>
+[+-CrewAIEventsBus] Warning: Event pairing mismatch. ------------------------'llm_call_failed' closed 
+['agent_execution_started' (expected CrewAIEventsBus'llm_call_started'])
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+ Sync handler error in on_llm_call_failed: +-'charmap' codec 
+can't encode character ------------------------------'\U0001f680' in position 1: character maps to 
+<undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
++-------------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+can't encode character '\u274c' in position 1[: character maps to +-------------------------<CrewAIEventsBusundefined]> Warning: Event pairing mismatch. 
+'llm_call_failed' closed 
+'agent_execution_started' [(expected CrewAIEventsBus'llm_call_started'])
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[CrewAIEventsBus Sync handler error in on_llm_call_failed: +-]'charmap'------------------------------ Warning: Event pairing mismatch.  codec 
+can't encode character 'agent_execution_error''\U0001f680' 
+closed  in position 'task_started'1: character maps to 
+ <(expected undefined'agent_execution_started'>)
+
+[CrewAIEventsBus[]CrewAIEventsBus Sync handler error in on_llm_call_failed: ]'charmap' Warning: Event pairing mismatch.  codec 
+can't encode character 'task_failed''\u274c' closed 
+ in position 'crew_kickoff_started'1 : character maps to (<expected 'task_started')
++-undefined>
+------------------------[CrewAIEventsBus] Sync handler error in on_task_failed: 'charmap' codec can't 
+encode character '\U0001f680' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Warning: Ending event 'crew_kickoff_failed' emitted with 
+empty scope stack. Missing starting event?
++------------------------------- Crew Failure --------------------------------+
+|                                                                             |
+|  Crew Execution Failed                                                      |
+|  Name: crew                                                                 |
+|  ID: d81e0cfe-e691-4b8b-8b26-0c1b8bb5c214                                   |
+|                                                                             |
+|                                                                             |
++-----------------------------------------------------------------------------+
+
+-> Agent pipeline failed for Naukri_AKSHITA[4y_0m].pdf: Model llama3 not found: 404 page not found
+
+--- Processing Naukri_AshishChauhan[2y_0m].pdf ---
++------------------------------ Tracing Status -------------------------------+
+|                                                                             |
+|  Info: Tracing is disabled.                                                 |
+|                                                                             |
+|  To enable tracing, do any one of these:                                    |
+|  ò Set tracing=True in your Crew/Flow code                                  |
+|  ò Set CREWAI_TRACING_ENABLED=true in your project's .env file              |
+|  ò Run: crewai traces enable                                                |
+|                                                                             |
++-----------------------------------------------------------------------------+
++-------------------------------[CrewAIEventsBus] Sync handler error in on_crew_started: 'charmap' codec can't 
+encode character '\u274c' in position 1: character maps to <undefined>
++-------------------------[CrewAIEventsBus] Sync handler error in on_task_started: 'charmap' codec can't 
+encode character '\U0001f680' in position 1: character maps to <undefined>
++-------------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
++-[------------------------------CrewAIEventsBus][ Warning: Event pairing mismatch. CrewAIEventsBus'llm_call_failed' closed 
+'agent_execution_started'] ( Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character expected '\u274c' in position 'llm_call_started'1): character maps to 
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+<+-undefined------------------------>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\U0001f680' in position 1: character maps to 
+<undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+[CrewAIEventsBus] Warning: Event pairing mismatch. 'llm_call_failed' closed 
+'agent_execution_started' +-(------------------------------expected 'llm_call_started'+-)[------------------------------
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
++-CrewAIEventsBus------------------------] Sync handler error in on_agent_logs_started: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\U0001f680' in position 1: character maps to 
+<undefined>
++-------------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+can't encode character '\u274c'[ in position CrewAIEventsBus+-1]------------------------------ Warning: Event pairing mismatch. : character maps to 'llm_call_failed'< closed 
+undefined'agent_execution_started'>
+ ([CrewAIEventsBusexpected ]'llm_call_started' Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character )'\u274c'
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[ in position 1CrewAIEventsBus: character maps to +-]------------------------< Warning: Event pairing mismatch. 'agent_execution_error'undefined 
+closed >
+'task_started' ([expected CrewAIEventsBus'agent_execution_started'] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character )
+'\U0001f680'[ in position CrewAIEventsBus1: character maps to 
+]< Warning: Event pairing mismatch. 'task_failed'undefined closed 
+>'crew_kickoff_started'
+ (expected 'task_started')
++-------------------------------[CrewAIEventsBus] Sync handler error in on_task_failed: 'charmap' codec can't 
+encode character '\u274c' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Warning: Ending event 'crew_kickoff_failed' emitted with 
+empty scope stack. Missing starting event?
++-------------------------------[CrewAIEventsBus] Sync handler error in on_crew_failed: 'charmap' codec can't 
+encode character '\u274c' in position 1: character maps to <undefined>
+-> Agent pipeline failed for Naukri_AshishChauhan[2y_0m].pdf: Model llama3 not found: 404 page not found
+
+--- Processing Naukri_HardikDang[2y_6m].pdf ---
++-------------------------[CrewAIEventsBus] Sync handler error in on_crew_started: 'charmap' codec can't 
+encode character '\U0001f680' in position 1: character maps to <undefined>
++-------------------------------[CrewAIEventsBus] Sync handler error in on_task_started: 'charmap' codec can't 
+encode character '\u274c' in position 1: character maps to <undefined>
++-------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+can't encode character '\U0001f680' in position 1: character maps to 
+<undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
++-[------------------------------CrewAIEventsBus][ Warning: Event pairing mismatch. CrewAIEventsBus'llm_call_failed' closed 
+]'agent_execution_started' Sync handler error in on_llm_call_failed:  (expected 'charmap''llm_call_started' codec 
+can't encode character '\u274c' in position )1
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+: character maps to <+-undefined------------------------------>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+[CrewAIEventsBus] Warning: Event pairing mismatch. +-'llm_call_failed'------------------------------ closed 
+'agent_execution_started' +-(expected 'llm_call_started')
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+------------------------[CrewAIEventsBus+-] Sync handler error in on_agent_logs_started: ------------------------------'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\U0001f680' in position 1: character maps to 
+<undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
++-------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+can't encode character +-'\U0001f680'------------------------------[CrewAIEventsBus] Warning: Event pairing mismatch. 'llm_call_failed' closed 
+'agent_execution_started' (expected 'llm_call_started')
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[ in position CrewAIEventsBus1+-]: character maps to 
+ Warning: Event pairing mismatch. 'agent_execution_error'<------------------------------ 
+closed 'task_started' (expected 'agent_execution_started')
+undefined>[CrewAIEventsBus
+] Warning: Event pairing mismatch. 'task_failed'[ closed 
+CrewAIEventsBus'crew_kickoff_started' (expected 'task_started')
++------------------------------] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Sync handler error in on_task_failed: 'charmap' codec can't 
+encode character ['\U0001f4cb'CrewAIEventsBus in position ]1 Warning: Ending event : character maps to 'crew_kickoff_failed' emitted with 
+empty scope stack. Missing starting event?
++-<------------------------undefined>
+[CrewAIEventsBus] Sync handler error in on_crew_failed: 'charmap' codec can't 
+encode character '\U0001f680' in position 1: character maps to <undefined>
+-> Agent pipeline failed for Naukri_HardikDang[2y_6m].pdf: Model llama3 not found: 404 page not found
+
+--- Processing Naukri_HarshitaSoni[2y_4m].pdf ---
++-------------------------------[CrewAIEventsBus] Sync handler error in on_crew_started: 'charmap' codec can't 
+encode character '\u274c' in position 1: character maps to <undefined>
++-------------------------------[CrewAIEventsBus] Sync handler error in on_task_started: 'charmap' codec can't 
+encode character '\u274c' in position 1: character maps to <undefined>
++-------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+can't encode character '\U0001f680' in position 1: character maps to 
+<undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+[CrewAIEventsBus+-]------------------------------ Warning: Event pairing mismatch. 'llm_call_failed' closed 
+'agent_execution_started'[CrewAIEventsBus ]( Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character expected '\u274c' in position 'llm_call_started'1)
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+: character maps to <+-undefined----------------------------->
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\U0001f4cb' in position 1: character maps to 
+<undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+[CrewAIEventsBus] Warning: Event pairing mismatch. 'llm_call_failed'+- closed 
+------------------------'agent_execution_started'[CrewAIEventsBus+-]  Sync handler error in on_agent_logs_started: 'charmap'( codec 
+can't encode character '\U0001f680'----------------------------- in position 1: character maps to 
+expected <'llm_call_started'undefined)>
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
++-
+------------------------------[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\U0001f4cb' in position 1: character maps to 
+<undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
++-------------------------[CrewAIEventsBus[+-]CrewAIEventsBus------------------------------] Warning: Event pairing mismatch.  Sync handler error in on_agent_logs_started: 'llm_call_failed''charmap' closed 
+ codec 
+can't encode character 'agent_execution_started' (expected '\U0001f680''llm_call_started' in position 1): character maps to 
+
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
++-[<------------------------------undefinedCrewAIEventsBus>
+][CrewAIEventsBus] Sync handler error in on_llm_call_failed:  Warning: Event pairing mismatch. 'agent_execution_error' 
+closed 'charmap''task_started' (expected  codec 
+can't encode character 'agent_execution_started''\u274c' in position )
+[1CrewAIEventsBus: character maps to ]< Warning: Event pairing mismatch. 'task_failed'undefined closed 
+>
+'crew_kickoff_started' ([expected CrewAIEventsBus'task_started']) Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character 
+'\u274c' in position 1+-: character maps to ------------------------<undefined>
+[CrewAIEventsBus] Sync handler error in on_task_failed: 'charmap' codec can't 
+encode character '\U0001f680' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Warning: Ending event 'crew_kickoff_failed' emitted with 
+empty scope stack. Missing starting event?
++------------------------------[CrewAIEventsBus] Sync handler error in on_crew_failed: 'charmap' codec can't 
+encode character '\U0001f4cb' in position 1: character maps to <undefined>
+-> Agent pipeline failed for Naukri_HarshitaSoni[2y_4m].pdf: Model llama3 not found: 404 page not found
+
+--- Processing Sweeti Kumari_Accountant.pdf ---
++-------------------------------[CrewAIEventsBus] Sync handler error in on_crew_started: 'charmap' codec can't 
+encode character '\u274c' in position 1: character maps to <undefined>
++-------------------------------[CrewAIEventsBus] Sync handler error in on_task_started: 'charmap' codec can't 
+encode character '\u274c' in position 1: character maps to <undefined>
++------------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+can't encode character '\U0001f4cb' in position 1: character maps to 
+<undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
++-[------------------------------CrewAIEventsBus][CrewAIEventsBus Warning: Event pairing mismatch. 'llm_call_failed' closed 
+]'agent_execution_started' (expected  Sync handler error in on_llm_call_failed: 'llm_call_started''charmap')
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
++- codec 
+can't encode character ------------------------'\u274c' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\U0001f680' in position 1: character maps to 
+<undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
+[CrewAIEventsBus+-]----------------------------- Warning: Event pairing mismatch. 'llm_call_failed'+- closed 
+'agent_execution_started'------------------------ [(CrewAIEventsBusexpected 'llm_call_started'] Sync handler error in on_agent_logs_started: )'charmap'
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+ codec 
+can't encode character +-'\U0001f4cb'------------------------------ in position 1: character maps to 
+<undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\U0001f680' in position 1: character maps to 
+<undefined>
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character '\u274c' in position 1: character maps to <undefined>
+ERROR:root:Model llama3 not found: 
+404 page not found
+ERROR:root:OpenAI API call failed: 
+Model llama3 not found: 404 page 
+not found
++------------------------------[CrewAIEventsBus] Sync handler error in on_agent_logs_started: 'charmap' codec 
+can't encode character '\U0001f4cb'[CrewAIEventsBus] Warning: Event pairing mismatch. 'llm_call_failed' in position 1: character maps to 
+<+-------------------------------undefined closed 
+>
+'agent_execution_started' [(CrewAIEventsBusexpected ]'llm_call_started' Sync handler error in on_llm_call_failed: 'charmap') codec 
+can't encode character 
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Model llama3 not found: 404 page not found[0m
+[+-------------------------------CrewAIEventsBus] Warning: Event pairing mismatch. 'agent_execution_error' 
+closed 'task_started''\u274c' in position 1 : character maps to (<expected undefined'agent_execution_started'>
+)
+[CrewAIEventsBus][ Warning: Event pairing mismatch. CrewAIEventsBus'task_failed'] closed 
+ Sync handler error in on_llm_call_failed: 'charmap' codec 
+can't encode character 'crew_kickoff_started''\u274c' in position  1(: character maps to expected <'task_started'undefined)>
+
++------------------------------[CrewAIEventsBus] Sync handler error in on_task_failed: 'charmap' codec can't 
+encode character '\U0001f4cb' in position 1: character maps to <undefined>
+[CrewAIEventsBus] Warning: Ending event 'crew_kickoff_failed' emitted with 
+empty scope stack. Missing starting event?
++-------------------------------[CrewAIEventsBus] Sync handler error in on_crew_failed: 'charmap' codec can't 
+encode character '\u274c' in position 1: character maps to <undefined>
+-> Agent pipeline failed for Sweeti Kumari_Accountant.pdf: Model llama3 not found: 404 page not found
