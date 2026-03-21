@@ -37,36 +37,36 @@ class LLMConfigManager:
         api_key = config["api_key"]
         
         try:
-            if provider == "openai":
-                from langchain_openai import ChatOpenAI
-                return ChatOpenAI(model=model_name, api_key=api_key, temperature=temperature)
-                
-            elif provider == "gemini":
-                from langchain_google_genai import ChatGoogleGenerativeAI
-                # Allow fallback to OS env if it was not explicitly passed in config
-                key = api_key or os.getenv("GOOGLE_API_KEY", "")
-                return ChatGoogleGenerativeAI(model=model_name, google_api_key=key, temperature=temperature)
-                
-            elif provider == "deepseek":
-                from langchain_openai import ChatOpenAI
-                key = api_key or os.getenv("DEEPSEEK_API_KEY", "")
-                base_url = config.get("base_url") or "https://api.deepseek.com"
-                return ChatOpenAI(
-                    model=model_name, 
-                    api_key=key, 
-                    base_url=base_url,
-                    temperature=temperature
-                )
-                
-            elif provider == "anthropic":
-                from langchain_anthropic import ChatAnthropic
-                key = api_key or os.getenv("ANTHROPIC_API_KEY", "")
-                return ChatAnthropic(model=model_name, api_key=key, temperature=temperature)
-                
-            else: # defaults to ollama
-                from crewai import LLM
-                base_url = config.get("base_url") or "http://localhost:11434"
-                return LLM(model="ollama/" + model_name, base_url=base_url, temperature=temperature)
+            # if provider == "openai":
+            #     from langchain_openai import ChatOpenAI
+            #     return ChatOpenAI(model=model_name, api_key=api_key, temperature=temperature)
+            #     
+            # elif provider == "gemini":
+            #     from langchain_google_genai import ChatGoogleGenerativeAI
+            #     # Allow fallback to OS env if it was not explicitly passed in config
+            #     key = api_key or os.getenv("GOOGLE_API_KEY", "")
+            #     return ChatGoogleGenerativeAI(model=model_name, google_api_key=key, temperature=temperature)
+            #     
+            # elif provider == "deepseek":
+            #     from langchain_openai import ChatOpenAI
+            #     key = api_key or os.getenv("DEEPSEEK_API_KEY", "")
+            #     base_url = config.get("base_url") or "https://api.deepseek.com"
+            #     return ChatOpenAI(
+            #         model=model_name, 
+            #         api_key=key, 
+            #         base_url=base_url,
+            #         temperature=temperature
+            #     )
+            #     
+            # elif provider == "anthropic":
+            #     from langchain_anthropic import ChatAnthropic
+            #     key = api_key or os.getenv("ANTHROPIC_API_KEY", "")
+            #     return ChatAnthropic(model=model_name, api_key=key, temperature=temperature)
+            #     
+            # else: # defaults to ollama
+            from crewai import LLM
+            base_url = config.get("base_url") or "http://localhost:11434"
+            return LLM(model="ollama/" + model_name, base_url=base_url, temperature=temperature)
                 
         except Exception as e:
             print(f"Failed to initialize LLM provider '{provider}': {e}")
@@ -76,19 +76,19 @@ class LLMConfigManager:
 llm_manager = LLMConfigManager()
 
 # --- Pre-configure the APIs from your .env ---
-llm_manager.add_config(
-    name="openai", 
-    provider="openai", 
-    model="gpt-4o-mini", # Adjust model if needed
-    api_key=os.getenv("OPENAI_API_KEY", "")
-)
+# llm_manager.add_config(
+#     name="openai", 
+#     provider="openai", 
+#     model="gpt-4o-mini", # Adjust model if needed
+#     api_key=os.getenv("OPENAI_API_KEY", "")
+# )
 
-llm_manager.add_config(
-    name="gemini", 
-    provider="gemini", 
-    model="gemini-pro", # Use 'gemini-pro' to avoid NOT_FOUND errors
-    api_key=os.getenv("GEMINI_API_KEY", "")
-)
+# llm_manager.add_config(
+#     name="gemini", 
+#     provider="gemini", 
+#     model="gemini-pro", # Use 'gemini-pro' to avoid NOT_FOUND errors
+#     api_key=os.getenv("GEMINI_API_KEY", "")
+# )
 
 llm_manager.add_config(
     name="ollama", 
@@ -99,8 +99,8 @@ llm_manager.add_config(
 )
 
 # Set the active configuration by checking ACTIVE_LLM in your .env file
-# Defaults to "openai" if not explicitly specified.
-active_config = os.getenv("ACTIVE_LLM", "openai").lower()
+# Defaults to "ollama" if not explicitly specified.
+active_config = os.getenv("ACTIVE_LLM", "ollama").lower()
 llm = llm_manager.get_llm(active_config)
 
 class TalentAcquisitionCrew:
@@ -109,7 +109,7 @@ class TalentAcquisitionCrew:
         self.jd_text = jd_text
         self.role_title = role_title
         if not llm:
-            raise Exception("LLM is not initialized. Ensure OPENAI_API_KEY is available in the environment.")
+            raise Exception("LLM is not initialized. Ensure Ollama is running.")
 
     def create_agents(self):
         # Agent 1: Parser

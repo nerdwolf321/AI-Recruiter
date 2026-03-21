@@ -88,36 +88,11 @@ def process_resumes():
             print(f"Skipping {file_name} - no text could be extracted.")
             continue
             
-        # Run CrewAI Pipeline (MOCKED FOR NOW)
-        # crew = TalentAcquisitionCrew(resume_text, jd_text, role_title)
+        # Run CrewAI Pipeline
         try:
-            print(f"-> Generating mock AI evaluation for {file_name}...")
-            # pydantic_output = crew.process()
-            pydantic_output = ResumeEvaluation(
-                candidate_name=f"Mock Candidate ({file_name[:5]})",
-                email="candidate@example.com",
-                phone="123-456-7890",
-                location="Remote",
-                linkedin_url="linkedin.com/in/mock",
-                overall_score=85,
-                skills_match_pct=90,
-                experience_score=80,
-                education_score=85,
-                recommendation="Shortlist",
-                seniority_level="Mid",
-                summary="This is a mocked summary because models are currently unavailable.",
-                strengths=["Fast Learner", "Good Comm"],
-                weaknesses=["Needs Domain Knowledge"],
-                risks=["None"],
-                opportunities=["High Growth"],
-                skills_list=["Python", "CrewAI", "Mocking"],
-                missing_skills=["Java"],
-                past_experience=[],
-                total_years_exp=5,
-                education="BS Computer Science",
-                certifications="Mock Frameworks Cert",
-                interview_questions=["Q1?", "Q2?", "Q3?", "Q4?", "Q5?"]
-            )
+            print(f"-> Running AI evaluation for {file_name} using Ollama...")
+            crew = TalentAcquisitionCrew(resume_text, jd_text, role_title)
+            pydantic_output = crew.process()
             
             if pydantic_output:
                 flat_data = flatten_outputs(pydantic_output, file_name, role_title)
@@ -142,8 +117,8 @@ def process_resumes():
             print(f"Results saved to: AI_Recruiter_Results.csv")
 
 if __name__ == "__main__":
-    if not os.environ.get("OPENAI_API_KEY"):
-        print("WARNING: OPENAI_API_KEY environment variable is missing! Please set it.")
-        print("Example: set OPENAI_API_KEY=sk-xxxxxx")
+    # if not os.environ.get("OPENAI_API_KEY"):
+    #     print("WARNING: OPENAI_API_KEY environment variable is missing! Please set it.")
+    #     print("Example: set OPENAI_API_KEY=sk-xxxxxx")
     
     process_resumes()
