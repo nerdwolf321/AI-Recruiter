@@ -1,5 +1,6 @@
 import os
 import glob
+import re
 import pandas as pd
 from datetime import datetime
 from dotenv import load_dotenv
@@ -11,9 +12,23 @@ from parser import read_document
 from agents import TalentAcquisitionCrew
 from schema import ResumeEvaluation
 
+def clean_text(text: str) -> str:
+    """Cleans raw extracted text by removing excessive whitespace and junk characters."""
+    if not text:
+        return ""
+    # Remove null bytes and non-printable characters
+    text = "".join(char for char in text if char.isprintable() or char in "\n\r\t")
+    # Collapse multiple newlines/spaces
+    text = re.sub(r'\n+', '\n', text)
+    text = re.sub(r' +', ' ', text)
+    return text.strip()
+
 def flatten_outputs(eval_data: ResumeEvaluation, file_name: str, role_title: str) -> dict:
     """Flattens the Pydantic object into a dictionary suitable for a single Excel row."""
-    # Handle potentially missing lists by safely defaulting to empty list
+    # Ensure eval_data is not None
+    if not eval_data:
+        return {}
+        
     strengths = getattr(eval_data, 'strengths', []) or []
     weaknesses = getattr(eval_data, 'weaknesses', []) or []
     risks = getattr(eval_data, 'risks', []) or []
@@ -44,14 +59,14 @@ def flatten_outputs(eval_data: ResumeEvaluation, file_name: str, role_title: str
         "Opportunities": " | ".join(opportunities),
         "Skills List": ", ".join(skills),
         "Missing Skills": ", ".join(missing),
-        "Past Experience": " | ".join([f"{e.company} · {e.role} · {e.duration}" for e in past_exp]),
+        "Past Experience": " | ".join([f"{e.company} ({e.role}) [{e.duration}]" for e in past_exp]),
         "Total Years Exp.": getattr(eval_data, 'total_years_exp', 0),
         "Education": eval_data.education,
         "Certifications": eval_data.certifications,
         "Interview Questions": " | ".join(questions),
         "Seniority Level": eval_data.seniority_level,
         
-        "Processed Date": datetime.now().isoformat(),
+        "Processed Date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "File Name": file_name,
         "Recruiter Notes": "",      # Manual column
         "Interview Status": ""      # Manual column
@@ -60,65 +75,72 @@ def flatten_outputs(eval_data: ResumeEvaluation, file_name: str, role_title: str
 def process_resumes():
     # 1. Read Job Description
     try:
-        with open("job_description.txt", "r", encoding="utf-8") as f:
+        jd_path = "job_description.txt"
+        if not os.path.exists(jd_path):
+            print(f"Error: {jd_path} not found.")
+            return
+            
+        with open(jd_path, "r", encoding="utf-8") as f:
             jd_text = f.read()
-            # Try to grab the role title from the very first line of the JD
-            first_line = jd_text.strip().split('\n')[0]
-            role_title = first_line.replace("Role:", "").strip() if "Role:" in first_line else "Software Engineer"
+            # Grab role title from first line or default
+            lines = [l.strip() for l in jd_text.split('\n') if l.strip()]
+            role_title = lines[0].replace("Role:", "").strip() if lines and "Role:" in lines[0] else "Software Engineer"
     except Exception as e:
         print(f"Error reading job_description.txt: {e}")
-        print("Please create 'job_description.txt' with 'Role: [Role Name]' on the first line.")
         return
 
     # 2. Iterate through resumes folder
     resume_files = glob.glob("resumes/*.*")
+    # Filter for supported extensions
+    resume_files = [f for f in resume_files if f.lower().endswith(('.pdf', '.docx', '.txt'))]
+    
     if not resume_files:
-        print("No resumes found in the 'resumes/' directory. Please add some PDF/DOCX/TXT files.")
+        print("No valid resumes found in 'resumes/'. Please add PDF, DOCX, or TXT files.")
         return
 
+    print(f"🚀 Found {len(resume_files)} resumes to process for role: {role_title}")
     all_results = []
     
     for file_path in resume_files:
         file_name = os.path.basename(file_path)
-        print(f"\n--- Processing {file_name} ---")
+        print(f"\n--- 📄 Analyzing {file_name} ---")
         
-        # Parse Document Extractor
-        resume_text = read_document(file_path)
-        if not resume_text or len(resume_text.strip()) < 20:
-            print(f"Skipping {file_name} - no text could be extracted.")
+        # Parse Document
+        raw_text = read_document(file_path)
+        cleaned_text = clean_text(raw_text)
+        
+        if not cleaned_text or len(cleaned_text) < 50:
+            print(f"⚠️ Skipping {file_name} - insufficient text extracted.")
             continue
             
         # Run CrewAI Pipeline
         try:
-            print(f"-> Running AI evaluation for {file_name} using Ollama...")
-            crew = TalentAcquisitionCrew(resume_text, jd_text, role_title)
+            print(f"-> Starting CrewAI pipeline for {file_name}...")
+            crew = TalentAcquisitionCrew(cleaned_text, jd_text, role_title)
             pydantic_output = crew.process()
             
             if pydantic_output:
                 flat_data = flatten_outputs(pydantic_output, file_name, role_title)
-                all_results.append(flat_data)
-                print(f"-> Successfully analyzed {file_name}!")
+                if flat_data:
+                    all_results.append(flat_data)
+                    print(f"✅ Successfully analyzed {file_name}!")
             else:
-                print(f"-> Failed to generate structured Pydantic output for {file_name}.")
+                print(f"❌ Pipeline returned no structured data for {file_name}.")
         except Exception as e:
-            print(f"-> Agent pipeline failed for {file_name}: {e}")
+            print(f"💥 Critical failure analyzing {file_name}: {e}")
 
     # 3. Export to Excel
     if all_results:
         df = pd.DataFrame(all_results)
-        output_file = "AI_Recruiter_Results.xlsx"
+        output_file = f"AI_Recruiter_Results_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx"
         try:
             df.to_excel(output_file, index=False)
-            print(f"\n✅ Processing complete! {len(all_results)} resumes evaluated.\nResults saved to: {output_file}")
+            print(f"\n✨ Processing complete! {len(all_results)} resumes evaluated.")
+            print(f"📊 Results saved to: {output_file}")
         except Exception as e:
-            # Fallback to CSV if openpyxl fails
-            print(f"Error saving to Excel: {e}\nFalling back to CSV...")
-            df.to_csv("AI_Recruiter_Results.csv", index=False)
-            print(f"Results saved to: AI_Recruiter_Results.csv")
+            fallback_csv = output_file.replace(".xlsx", ".csv")
+            print(f"Error saving to Excel: {e}\nFalling back to CSV: {fallback_csv}")
+            df.to_csv(fallback_csv, index=False)
 
 if __name__ == "__main__":
-    # if not os.environ.get("OPENAI_API_KEY"):
-    #     print("WARNING: OPENAI_API_KEY environment variable is missing! Please set it.")
-    #     print("Example: set OPENAI_API_KEY=sk-xxxxxx")
-    
     process_resumes()
